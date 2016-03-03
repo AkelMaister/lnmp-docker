@@ -3,7 +3,7 @@ MAINTAINER Akel <akel@akelmaister.com>
 
 ## install base-packages
 RUN yum -y install epel-release
-RUN yum -y install nginx php-fpm php-devel gcc libtool php-mysql wget git nano
+RUN yum -y install nginx php-fpm php-devel gcc libtool php-mysql wget git nano mariadb-server mariadb
 
 ## Get latest Phalcon sources
 WORKDIR ['/usr/local/src/']

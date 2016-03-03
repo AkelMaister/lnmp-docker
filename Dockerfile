@@ -10,8 +10,7 @@ WORKDIR ['/usr/local/src/']
 RUN git clone --depth=1 git://github.com/phalcon/cphalcon.git
 
 ## Build Phalcon2 module
-WORKDIR ['/usr/local/src/cphalcon/build']
-RUN ./install
+RUN cd /usr/local/src/cphalcon/build && /bin/sh install
 
 ## Add Phalcon module to php (need to connect after mysql extension)
 RUN echo "extension=phalcon.so" >> /etc/php.d/pdo_mysql.ini

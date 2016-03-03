@@ -6,8 +6,7 @@ RUN yum -y install epel-release
 RUN yum -y install nginx php-fpm php-devel gcc libtool php-mysql wget git nano mariadb-server mariadb
 
 ## Get latest Phalcon sources
-WORKDIR ['/usr/local/src/']
-RUN git clone --depth=1 git://github.com/phalcon/cphalcon.git
+RUN cd /usr/local/src/ && git clone --depth=1 git://github.com/phalcon/cphalcon.git
 
 ## Build Phalcon2 module
 RUN cd /usr/local/src/cphalcon/build && /bin/sh install
